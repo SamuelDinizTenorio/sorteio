@@ -142,8 +142,8 @@ h1 {
     }
 
     .circle1, .circle2, .circle3, .circle4, .circle5, .circle6, .circle7 {
-        width: 30%; /* Reduz o tamanho dos círculos */
-        height: 30%;
+        width: 30vw; /* Reduz o tamanho dos círculos */
+        height: 30vh;
     }
 
     .circle1 {
@@ -202,8 +202,8 @@ h1 {
     }
 
     .circle1, .circle2, .circle3, .circle4, .circle5, .circle6, .circle7 {
-        width: 25%; /* Reduz ainda mais os círculos */
-        height: 25%;
+        width: 30vw; /* Reduz ainda mais os círculos */
+        height: 30vh;
     }
     .circle1 {
         top: -2rem; /* Ajusta a posição do círculo 1 */
