@@ -1,0 +1,242 @@
+:root {
+    --background-color: #ffd1eb;
+    --text-color: #F76CA6;
+    --btn-color: #F76CA6;
+    --btn-color-hover: #A03EAB;
+
+    /* Cores dos círculos */
+    --circle1-color: #FF6CAB;
+    --circle2-color: #FFA952;
+    --circle3-color: #A03EAB;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background-color);
+    overflow: hidden;
+    height: 100vh;
+    position: relative;
+    font-family: sans-serif;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-top: 100px;
+    color: var(--text-color);
+}
+
+/* Círculos decorativos */
+.circle {
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0.3;
+    filter: blur(0.3rem);
+    z-index: 0;
+}
+
+.circle1 {
+    width: 13rem;
+    height: 13rem;
+    background: var(--circle1-color);
+    top: -3rem;
+    left: -3rem;
+}
+
+.circle2 {
+    width: 20rem;
+    height: 20rem;
+    background: var(--circle2-color);
+    top: 30%;
+    right: -9rem;
+}
+
+.circle3 {
+    width: 9.4rem;
+    height: 9.4rem;
+    background: var(--circle3-color);
+    top: 7rem;
+    left: 20%;
+}
+
+.circle4 {
+    width: 15rem;
+    height: 15rem;
+    background: var(--circle2-color);
+    top: 20rem;
+    left: 3rem;
+}
+
+.circle5 {
+    width: 10rem;
+    height: 10rem;
+    background: var(--circle1-color);
+    top: 40rem;
+    right: 30%;
+}
+
+.circle6 {
+    width: 20rem;
+    height: 20rem;
+    background: var(--circle3-color);
+    top: -10%;
+    left: 65%;
+}
+
+.circle7 {
+    width: 12rem;
+    height: 12rem;
+    background: var(--circle1-color);
+    top: 70%;
+    left: 25%;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+#drawBtn {
+    padding: 1rem 2rem;
+    background: var(--btn-color);
+    border: none;
+    border-radius: 2rem;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#drawBtn:hover {
+    background-color: var(--btn-color-hover);
+    transition: 0.3s;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#winner {
+    display: none;
+    margin-top: 6rem;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* Para telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Reduz o tamanho do título */
+    }
+
+    #drawBtn {
+        padding: 0.8rem 1.5rem; /* Ajusta o botão */
+        font-size: 1rem;
+    }
+
+    #winner {
+        font-size: 2rem; /* Reduz o tamanho do texto do vencedor */
+    }
+
+    .circle {
+        opacity: 0.2; /* Reduz a opacidade dos círculos */
+    }
+
+    .circle1, .circle2, .circle3, .circle4, .circle5, .circle6, .circle7 {
+        width: 30%; /* Reduz o tamanho dos círculos */
+        height: 30%;
+    }
+
+    .circle1 {
+        top: -2rem; /* Ajusta a posição do círculo 1 */
+        left: -2rem;
+    }
+
+    .circle2 {
+        top: 20%;
+        right: -5rem; /* Ajusta a posição do círculo 2 */
+    }
+    
+    .circle3 {
+        top: 80%;
+        left: 80%;
+    }
+
+    .circle4 {
+        top: 40%;
+        left: 10%;
+    }
+
+    .circle5 {
+        top: 75%;
+        left: -5rem;
+    }   
+
+    .circle6 {
+        top: -9rem;
+        left: 40%;
+    }
+
+    .circle7 {
+        top: 50%;
+        left: 50%;
+    }
+}
+
+/* Para telas menores que 480px (celulares) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Reduz ainda mais o título */
+    }
+
+    #drawBtn {
+        padding: 0.5rem 1rem; /* Ajusta o botão para caber em telas menores */
+        font-size: 0.9rem;
+    }
+
+    #drawBtn:hover {
+        transform: scale(1); /* Reduz o efeito de hover */
+    }
+
+    #winner {
+        font-size: 1.5rem; /* Ajusta o texto do vencedor */
+    }
+
+    .circle1, .circle2, .circle3, .circle4, .circle5, .circle6, .circle7 {
+        width: 25%; /* Reduz ainda mais os círculos */
+        height: 25%;
+    }
+    .circle1 {
+        top: -2rem; /* Ajusta a posição do círculo 1 */
+        left: -2rem;
+    }
+
+    .circle2 {
+        top: -2rem;
+        right: -1rem; /* Ajusta a posição do círculo 2 */
+    }
+
+    .circle3 {
+        top: 30%; /* Ajusta a posição do círculo 3 */
+        left: 10%;
+    }
+
+    .circle4 {
+        top: 70%; /* Ajusta a posição do círculo 4 */
+        left: 30%;
+    }
+
+    .circle5 {
+        top: 60%; /* Ajusta a posição do círculo 5 */
+        left: -1rem;
+    }
+
+    .circle6 {
+        top: 80%; 
+        left: 80%;
+    }
+
+    .circle7 {
+        top: 40%;
+        left: 60%;
+    }
+}
