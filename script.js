@@ -38,10 +38,5 @@ drawBtn.addEventListener('click', () => {
         winner.style.display = 'block'; // Mostra o vencedor
         drawBtn.disabled = true; // Desativa o botão após o sorteio
         drawBtn.textContent = 'Sorteio realizado!'; // Atualiza o texto do botão
-        
     }, (countdown.length + 1) * 1000); // Espera o tempo da contagem regressiva antes de realizar o sorteio
-
-    setTimeout(() => {
-        
-    }, (countdown.length + 1) * 1500);
 });
