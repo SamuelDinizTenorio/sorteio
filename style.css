@@ -37,60 +37,85 @@ body {
     z-index: 0;
 }
 
+/* Círculos decorativos */
 .circle1 {
     width: 13rem;
     height: 13rem;
     background: var(--circle1-color);
-    top: -3rem;
-    left: -3rem;
+    top: 110%; /* Fora da tela, embaixo */
+    left: 5%; /* Próximo à esquerda */
 }
 
 .circle2 {
     width: 20rem;
     height: 20rem;
     background: var(--circle2-color);
-    top: 30%;
-    right: -9rem;
+    top: 110%; /* Fora da tela, embaixo */
+    left: 25%; /* Mais ao centro */
 }
 
 .circle3 {
     width: 9.4rem;
     height: 9.4rem;
     background: var(--circle3-color);
-    top: 7rem;
-    left: 20%;
+    top: 110%; /* Fora da tela, embaixo */
+    left: 45%; /* Centro */
 }
 
 .circle4 {
     width: 15rem;
     height: 15rem;
     background: var(--circle2-color);
-    top: 20rem;
-    left: 3rem;
+    top: 110%; /* Fora da tela, embaixo */
+    left: 65%; /* Mais à direita */
 }
 
 .circle5 {
     width: 10rem;
     height: 10rem;
     background: var(--circle1-color);
-    top: 40rem;
-    right: 30%;
+    top: 110%; /* Fora da tela, embaixo */
+    left: 85%; /* Próximo à direita */
 }
 
 .circle6 {
     width: 20rem;
     height: 20rem;
     background: var(--circle3-color);
-    top: -10%;
-    left: 65%;
+    top: 110%; /* Fora da tela, embaixo */
+    left: 10%; /* Próximo à esquerda */
 }
 
 .circle7 {
     width: 12rem;
     height: 12rem;
+    background: var(--circle3-color);
+    top: 110%; /* Fora da tela, embaixo */
+    left: 30%; /* Mais ao centro */
+}
+
+.circle8 {
+    width: 15rem;
+    height: 15rem;
+    background: var(--circle2-color);
+    top: 110%; /* Fora da tela, embaixo */
+    left: 50%; /* Centro */
+}
+
+.circle9 {
+    width: 12rem;
+    height: 12rem;
+    background: var(--circle2-color);
+    top: 110%; /* Fora da tela, embaixo */
+    left: 70%; /* Mais à direita */
+}
+
+.circle10 {
+    width: 12rem;
+    height: 12rem;
     background: var(--circle1-color);
-    top: 70%;
-    left: 25%;
+    top: 110%; /* Fora da tela, embaixo */
+    left: 90%; /* Próximo à direita */
 }
 
 h1 {
@@ -122,6 +147,21 @@ h1 {
     font-weight: bold;
 }
 
+/* Animação para os círculos subirem e desaparecerem */
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh); /* Começa fora da tela, embaixo */
+        opacity: 1;
+    }
+    50% {
+        opacity: 1; /* Mantém visível no meio */
+    }
+    100% {
+        transform: translateY(-100vh); /* Sai da tela, em cima */
+        opacity: 0; /* Desaparece */
+    }
+}
+
 /* Para telas menores que 768px (tablets e celulares) */
 @media (max-width: 768px) {
     h1 {
@@ -138,51 +178,63 @@ h1 {
     }
 
     .circle {
+        width: 20vw; /* Define largura padrão para os círculos */
+        height: 20vw; /* Define altura padrão para os círculos */
         opacity: 0.2; /* Reduz a opacidade dos círculos */
     }
 
-    .circle1, .circle2, .circle3, .circle4, .circle5, .circle6, .circle7 {
-        width: 30vw; /* Reduz o tamanho dos círculos */
-        height: 20vh;
-    }
-
     .circle1 {
-        top: -2rem; /* Ajusta a posição do círculo 1 */
-        left: -2rem;
+        top: 110%;
+        left: 10%; /* Mais à esquerda */
     }
 
     .circle2 {
-        top: 20%;
-        right: -5rem; /* Ajusta a posição do círculo 2 */
+        top: 110%;
+        left: 70%; /* Mais à direita */
     }
-    
+
     .circle3 {
-        top: 80%;
-        left: 80%;
+        top: 110%;
+        left: 40%; /* Centro */
     }
 
     .circle4 {
-        top: 40%;
-        left: 10%;
+        top: 110%;
+        left: 20%; /* Próximo à esquerda */
     }
 
     .circle5 {
-        top: 75%;
-        left: -5rem;
-    }   
+        top: 110%;
+        left: 80%; /* Próximo à direita */
+    }
 
     .circle6 {
-        top: -9rem;
-        left: 40%;
+        top: 110%;
+        left: 30%; /* Mais ao centro */
     }
 
     .circle7 {
-        top: 50%;
-        left: 50%;
+        top: 110%;
+        left: 60%; /* Mais à direita */
+    }
+
+    .circle8 {
+        top: 110%;
+        left: 15%; /* Próximo à esquerda */
+    }
+
+    .circle9 {
+        top: 110%;
+        left: 50%; /* Centro */
+    }
+
+    .circle10 {
+        top: 110%;
+        left: 85%; /* Próximo à direita */
     }
 }
 
-/* Para telas menores que 480px (celulares) */
+/* Para telas menores que 480px (celulares pequenos) */
 @media (max-width: 480px) {
     h1 {
         font-size: 1.5rem; /* Reduz ainda mais o título */
@@ -201,43 +253,59 @@ h1 {
         font-size: 1.5rem; /* Ajusta o texto do vencedor */
     }
 
-    .circle1, .circle2, .circle3, .circle4, .circle5, .circle6, .circle7 {
-        width: 30vw; /* Reduz ainda mais os círculos */
-        height: 20vh;
+    .circle {
+        width: 25vw; /* Define largura padrão para os círculos */
+        height: 25vw; /* Define altura padrão para os círculos */
+        opacity: 0.2; /* Reduz a opacidade dos círculos */
     }
-    
+
     .circle1 {
-        top: -2rem; /* Ajusta a posição do círculo 1 */
-        left: -2rem;
+        top: 110%;
+        left: 15%; /* Mais à esquerda */
     }
 
     .circle2 {
-        top: -2rem;
-        right: -1rem; /* Ajusta a posição do círculo 2 */
+        top: 110%;
+        left: 75%; /* Mais à direita */
     }
 
     .circle3 {
-        top: 30%; /* Ajusta a posição do círculo 3 */
-        left: 10%;
+        top: 110%;
+        left: 35%; /* Centro */
     }
 
     .circle4 {
-        top: 70%; /* Ajusta a posição do círculo 4 */
-        left: 30%;
+        top: 110%;
+        left: 5%; /* Próximo à esquerda */
     }
 
     .circle5 {
-        top: 60%; /* Ajusta a posição do círculo 5 */
-        left: -1rem;
+        top: 110%;
+        left: 85%; /* Próximo à direita */
     }
 
     .circle6 {
-        top: 80%; 
-        left: 80%;
+        top: 110%;
+        left: 25%; /* Mais ao centro */
     }
 
     .circle7 {
-        top: 40%;
-        left: 60%;
+        top: 110%;
+        left: 65%; /* Mais à direita */
+    }
+
+    .circle8 {
+        top: 110%;
+        left: 10%; /* Próximo à esquerda */
+    }
+
+    .circle9 {
+        top: 110%;
+        left: 45%; /* Centro */
+    }
+
+    .circle10 {
+        top: 110%;
+        left: 90%; /* Próximo à direita */
     }
 }
